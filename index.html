@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora básica</title>
+    <!-- Calculadora que efetua um cálculo básico a partir de dois números -->
+   
+    <!-- Será utilizado CSS internal a fim de uma melhor visualização do exercício -->
+    <style>
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        body {
+            margin: 0;  
+        }
+
+        main {
+            width: 50%;
+            max-width: 800px;
+            min-width: 480px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        button {
+            margin: 10px 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- Estrutura da Calculadora-->
+<main>
+    <h1>Calculadora</h1>
+        <div class="form">
+            <!-- Inserção do valor 01 -->
+            <label>
+                Valor 01:
+                <input type="text" name="entrada1" id="entrada1" class="entrada1">
+            </label>
+            
+            <!-- Inserção do valor 02 -->
+            <label>
+                Valor 02:
+                <input type="text" name="entrada2" id="entrada2" class="entrada2" >
+            </label>
+            <br>
+            
+            <!-- Botões de ação -->
+            <button class="somar">Somar</button>
+            <button class="subtrair">Subtrair</button>
+            <button class="multiplicar">Multiplicar</button>
+            <button class="dividir">Dividir</button>
+            <br>
+
+            <!-- Resultado -->
+            <label>
+                Resultado:
+                <input type="text" name="resultado" id="resultado" class="resultado" >
+            </label> 
+
+            <!-- Botão de Limpeza -->
+            <button class="clear">Limpar</button>
+        </div>
+</main>
+
+<!-- Javascript-->
+<script>
+
+// Declaração das variáveis de entrada
+    var entrada1 = document.querySelector('.entrada1');
+    var entrada2 = document.querySelector('.entrada2');
+    var result = document.querySelector('.resultado');
+    var limpar = document.querySelector('.clear');
+
+    var somar = document.querySelector('.somar');
+    var subtrair = document.querySelector('.subtrair');
+    var multiplicar = document.querySelector('.multiplicar');
+    var dividir = document.querySelector('.dividir');
+
+// Configurações gerais
+    result.disabled = true;
+
+// Função de soma
+function soma() {
+    var soma1 = Number(entrada1.value);
+    var soma2 = Number(entrada2.value);
+    result = soma1 + soma2;
+    resultado.value = result 
+}
+
+// Função de subtração
+function sub() {
+    var sub1 = Number(entrada1.value);
+    var sub2 = Number(entrada2.value);
+    result = sub1 - sub2;
+    resultado.value = result 
+}
+
+// Função de multiplicação
+function mult() {
+    var mult1 = Number(entrada1.value);
+    var mult2 = Number(entrada2.value);
+    result = mult1 * mult2;
+    resultado.value = result 
+}
+
+// Função de divisão
+function divi() {
+    var divi1 = Number(entrada1.value);
+    var divi2 = Number(entrada2.value);
+    result = divi1 / divi2;
+    resultado.value = result 
+}
+
+// Função de limpeza
+function clear() {
+    entrada1.value = ' ';
+    entrada2.value = ' ';
+    resultado.value = ' ';
+}
+
+// Eventos dos botões
+subtrair.addEventListener('click', sub);
+somar.addEventListener('click', soma);
+multiplicar.addEventListener('click', mult);
+dividir.addEventListener('click', divi);
+limpar.addEventListener('click', clear);
+
+</script>
+</body>
+<!-- código desenvolvido por João Castro -->
+</html>
+
